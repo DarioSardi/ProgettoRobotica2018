@@ -1,5 +1,5 @@
 							
--------------------------------------------------------##SETUP INIZIALE##-------------------------------------------------------
+-------------------------------##SETUP INIZIALE (non utile, scritta prima del clean install##-----------------------------------
 -dopo aver connesso l'alimentazione, premere il pulsante con a fianco la scritta 'POWERBTN'per alimentare la macchina
 -seguire le istruzioni che si presentano a monitor per l'installazione dei driver nvidia (cuda e co.), tenendo conto che la password 		 per il root è 'nvidia'
 -usare il comando 'reboot -n' per riavviare il sistema
@@ -32,5 +32,12 @@
   
   3.2) 	  per ripristinare un backup posizionare il "backup.img" nella directory contenente flash.sh mentre copiare il file backup.img.raw 		  nella cartella bootloader rinominandolo system.img (da linea di comando "sudo cp backup.img.raw bootloader/system.img".
 	  Aprire ora un terminale nella cartella contenente flash.sh e digitare "sudo ./flash.sh -r -k APP jetson-tx2 mmcblk0p1" che si 	  occuperà di eseguire il flash della partizione p1 del disco mmcblk0
+
+4) durante il flash si è presentato un errore (err1.png), collegando una tastiera al jackson ho installato manualmente i pacchetti mancanti e premuto enter come indicato da jetpack (n.b. eseguire "sudo apt-get update" prima di qualsiasi apt-get install per aggiornare le repo)
+
+-----------------------------------------------------##POST FLASH###-------------------------------------------------------
+1) installato ROS l'SDK di zed richiedeva cuda 8.0 mentre era installato il 9.0, attenzione dunque a scaricare l'sdk v2.5 che supporta cuda 9
+	(link: https://www.stereolabs.com/developers/release/2.5/)
+
 
 	 
