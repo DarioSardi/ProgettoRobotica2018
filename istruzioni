@@ -1,0 +1,36 @@
+							
+-------------------------------------------------------##SETUP INIZIALE##-------------------------------------------------------
+-dopo aver connesso l'alimentazione, premere il pulsante con a fianco la scritta 'POWERBTN'per alimentare la macchina
+-seguire le istruzioni che si presentano a monitor per l'installazione dei driver nvidia (cuda e co.), tenendo conto che la password 		 per il root è 'nvidia'
+-usare il comando 'reboot -n' per riavviare il sistema
+
+-------------------------------------------------------##A UI AVVIATA##---------------------------------------------------------
+1) (OPZIONALE)	
+	Per cambiare il layout di tastiera, digitare in un terminale 'sudo dpkg-reconfigure keyboard-configuration':
+	-> accettare 'Generic 105-key (intl) PC'
+	-> selezionare Italian nel menù del paese di origine della tastiera
+	-> accettare le restanti impostazioni senza modificarle
+2) (OPZIONALE)
+	Per cambiare la fascia oraria nelle impostazioni di sistema,nel sottomenù "time & Date" cliccare sulla mappa in corrispondenza di Roma 		  per selezionare il fuso orario corretto
+
+3) Seguire le indicazioni per l'istallazione di ros-kinetic dal sito ufficiale.
+4) la macchina non era prevista di driver cuda (l'installer dei driver zed ha confermato il sospetto) quindi è necessario eseguire il flash
+
+----------------------------------------------------------##FLASH##-------------------------------------------------------------
+1) porre la scheda tx2 in recovery mode:
+	- accendere tramite il pulsante di accensione 
+	- tenendo premuto il pulsante di recovery premere e rilasciare il pulsante di reset
+	- dopo 2 secondi di pressione del tasto recovery rilasciarlo.
+
+2) per eseguire un backup del sistema precedente presente nella board:
+	- navigare nella cartella di L4T nella cartella di jetpack (dopo averlo eseguito e installato i pacchetti necessari,la directory nel 		  mio calcolatore è ./64_TX2/Linux_for_Tegra/) dove è presente il file "flash.sh".
+	- aprendo un terminale in questa posizione digitare "sudo ./flash.sh -r -k APP -G backup.img jetson-tx2 mmcblk0p1"
+		(per maggiori info visitare "https://elinux.org/Jetson/TX2_Cloning" e i relativi topic linkati.
+	-verranno generati due file, backup.img e backup.img.raw
+  
+  3.1) 	  per eseguire il flash seguire le istruzioni di jatpack
+  
+  3.2) 	  per ripristinare un backup posizionare il "backup.img" nella directory contenente flash.sh mentre copiare il file backup.img.raw 		  nella cartella bootloader rinominandolo system.img (da linea di comando "sudo cp backup.img.raw bootloader/system.img".
+	  Aprire ora un terminale nella cartella contenente flash.sh e digitare "sudo ./flash.sh -r -k APP jetson-tx2 mmcblk0p1" che si 	  occuperà di eseguire il flash della partizione p1 del disco mmcblk0
+
+	 

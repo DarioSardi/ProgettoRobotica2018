@@ -1,0 +1,9 @@
+ARUCO
+	setimage() ->	setto immagine da sensore.
+	getId()	->	
+	getPosition() -> pos rispetto alla telecamera.
+
+obiettivo: riuscire a ottenere coordinarte da immaggine scattata
+
+zed camera 
+ros jatson per tx2 da scaricare
