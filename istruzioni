@@ -1,6 +1,6 @@
-							
--------------------------------##SETUP INIZIALE (non utile, scritta prima del clean install##-----------------------------------
--dopo aver connesso l'alimentazione, premere il pulsante con a fianco la scritta 'POWERBTN'per alimentare la macchina
+
+dopo aver connesso l'alimentazione, premere il pulsante con a fianco la scritta 'POWERBTN'per alimentare la macchina					
+-------------------------------##SETUP INIZIALE (non utile, scritta prima del clean install)##-----------------------------------
 -seguire le istruzioni che si presentano a monitor per l'installazione dei driver nvidia (cuda e co.), tenendo conto che la password 		 per il root è 'nvidia'
 -usare il comando 'reboot -n' per riavviare il sistema
 

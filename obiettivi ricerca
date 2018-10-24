@@ -7,3 +7,18 @@ obiettivo: riuscire a ottenere coordinarte da immaggine scattata
 
 zed camera 
 ros jatson per tx2 da scaricare
+
+libusb test
+
+versione comp ros(kinetic')
+-framerate sulla zed. 50 in 720 sulla hub, idem senza
+
+Da modificare file per libusb-> SATR/src/Functionality/robot_labmate/src/StarLabmate.cpp
+	ricordarsi del vendorid e
+ 
+test topic zed-wrapper
+Star/temp openfab.->publish sul topic da parte della ros.-> openfab map
+3 programmi learn,explore (mappa), place recognition (riconosce dove è gia stata)
+from-> topic del sw to-> topic del driver. (vedi place recognition_launch-> arg image è il topic da modificare)
+
+spostare ros-openfabmap2 e msg in ROS/src
