@@ -25,28 +25,24 @@ class Serial {
  char read_msg_[512];
 
  boost::asio::io_service m_io;
-
  boost::asio::serial_port m_port;
 
   private:
     
 void handler(  const boost::system::error_code& error, size_t bytes_transferred)
 {
-      read_msg_[bytes_transferred]=0;
-		 read_some();
+    read_msg_[bytes_transferred]=0;
+	
 	if(bytes_transferred>0){
 		std::cout << bytes_transferred << " bytes: " << read_msg_ << std::endl;
     }
+	read_some();
      
 }
 
 void read_some()
 {
-  m_port.async_read_some(boost::asio::buffer(read_msg_,512),
-	  boost::bind(&Serial::handler, 
-		this,
-		boost::asio::placeholders::error, 
-                boost::asio::placeholders::bytes_transferred) );
+  m_port.async_read_some(boost::asio::buffer(read_msg_,512),boost::bind(&Serial::handler,this,boost::asio::placeholders::error,boost::asio::placeholders::bytes_transferred) );
 }
 
   public:
@@ -74,7 +70,8 @@ int main(int argc, char* argv[])
   Serial s(argv[1]);
       
   // wait some
-  sleep(10);
+  //while(1){}
+  sleep(100);
       
   return 0;
 
