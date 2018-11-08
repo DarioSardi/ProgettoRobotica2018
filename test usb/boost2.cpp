@@ -20,10 +20,11 @@
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
 
+
 class Serial {
 
- char read_msg_[512];
-
+ char read_msg_[40];
+ std::stringstream ss;
  boost::asio::io_service m_io;
  boost::asio::serial_port m_port;
 
@@ -31,7 +32,7 @@ class Serial {
     
 void handler(  const boost::system::error_code& error, size_t bytes_transferred)
 {
-    read_msg_[bytes_transferred]=0;
+    read_msg_[bytes_transferred]=0; //evita extra e aggiunge uno 0 che cout interpreta come fine array
 	
 	if(bytes_transferred>0){
 		std::cout << bytes_transferred << " bytes: " << read_msg_ << std::endl;
@@ -42,7 +43,22 @@ void handler(  const boost::system::error_code& error, size_t bytes_transferred)
 
 void read_some()
 {
-  m_port.async_read_some(boost::asio::buffer(read_msg_,512),boost::bind(&Serial::handler,this,boost::asio::placeholders::error,boost::asio::placeholders::bytes_transferred) );
+  m_port.async_read_some(boost::asio::buffer(read_msg_,512),
+						 boost::bind(&Serial::handler,this,boost::asio::placeholders::error,boost::asio::placeholders::bytes_transferred)
+						
+						);
+}
+
+
+void my_read(){
+  int read_size=m_port.read_some(boost::asio::buffer(read_msg_,40));
+  read_msg_[read_size]=0;
+  ss<<read_msg_;
+  if(read_msg_[read_size-1]=='\n'){
+		std::cout << ss.str();
+		ss.str("");
+  }
+  
 }
 
   public:
@@ -55,10 +71,11 @@ void read_some()
       port.set_option( boost::asio::serial_port_base::stop_bits() );	// default one
       port.set_option( boost::asio::serial_port_base::baud_rate( baud_rate ) );
 */
-      read_some();
+      //read_some();
       
       // run the IO service as a separate thread, so the main thread can do others
       boost::thread t(boost::bind(&boost::asio::io_service::run, &m_io));
+	  while(1){my_read();}
       }
 
 };
