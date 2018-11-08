@@ -27,7 +27,6 @@ class Serial {
  boost::asio::io_service m_io;
  boost::asio::serial_port m_port;
 
-
   private:
     
 void handler(  const boost::system::error_code& error, size_t bytes_transferred)
