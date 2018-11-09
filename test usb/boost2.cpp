@@ -8,7 +8,7 @@
   **/
 
 /* compile with
-  g++ -o serial serial.cpp -lboost_system -lboost_thread
+  g++ -std=gnu++11 -o boost boost2.cpp -lboost_system -lboost_thread -pthread
   */
 
 #include <unistd.h>
@@ -19,37 +19,24 @@
 #include <boost/system/system_error.hpp>
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/thread/thread.hpp>
+#include <thread>
+
+int stopflag = 0;
 
 
 class Serial {
-
+ std::string command;
  char read_msg_[40];
  std::stringstream ss;
  boost::asio::io_service m_io;
  boost::asio::serial_port m_port;
+ boost::asio::deadline_timer m_timer1; //timer read
+ boost::asio::strand m_strand;	 
 
-  private:
+public:
     
-void handler(  const boost::system::error_code& error, size_t bytes_transferred)
-{
-    read_msg_[bytes_transferred]=0; //evita extra e aggiunge uno 0 che cout interpreta come fine array
-	
-	if(bytes_transferred>0){
-		std::cout << bytes_transferred << " bytes: " << read_msg_ << std::endl;
-    }
-	read_some();
-     
-}
-
-void read_some()
-{
-  m_port.async_read_some(boost::asio::buffer(read_msg_,512),
-						 boost::bind(&Serial::handler,this,boost::asio::placeholders::error,boost::asio::placeholders::bytes_transferred)
-						
-						);
-}
-
-
 void my_read(){
   int read_size=m_port.read_some(boost::asio::buffer(read_msg_,40));
   read_msg_[read_size]=0;
@@ -58,38 +45,45 @@ void my_read(){
 		std::cout << ss.str();
 		ss.str("");
   }
+  m_timer1.async_wait(m_strand.wrap(boost::bind(&Serial::my_read, this)));
   
 }
 
-  public:
+void my_write(){
+	/*boost::array<char, 128> buf;
+	std::copy(message.begin(),message.end(),buf.begin());	
+	m_port.write_some(boost::asio::buffer(buf,20));*/
+	
+}
 
-    Serial(const char *dev_name) : m_io(), m_port(m_io, dev_name)
+ 
+
+    Serial(const char *dev_name) : m_io(), m_port(m_io, dev_name), m_strand(m_io),m_timer1(m_io, boost::posix_time::seconds(1))
       {
-/*    
-      port.set_option( boost::asio::serial_port_base::parity() );	// default none
-      port.set_option( boost::asio::serial_port_base::character_size( 8 ) );
-      port.set_option( boost::asio::serial_port_base::stop_bits() );	// default one
-      port.set_option( boost::asio::serial_port_base::baud_rate( baud_rate ) );
-*/
-      //read_some();
-      
-      // run the IO service as a separate thread, so the main thread can do others
-      boost::thread t(boost::bind(&boost::asio::io_service::run, &m_io));
-	  while(1){my_read();}
+      boost::thread t(boost::bind(&boost::asio::io_service::run, &m_io)); //thread per l'io
+	  m_timer1.async_wait(m_strand.wrap(boost::bind(&Serial::my_read, this))); //thread per la gestione dei read
+	 
       }
 
 };
 
-/* serial <devicename> */
+
+void input_func(){
+    while(true && !stopflag)
+    {
+        std::string input;
+        std::cin >> input;
+        std::cout << "Input: " << input << std::endl;
+    }
+}
 
 int main(int argc, char* argv[])
 {
   Serial s(argv[1]);
-      
-  // wait some
-  //while(1){}
+  std::thread inp(input_func);    
+  
   sleep(100);
-      
+   
   return 0;
 
 } 
