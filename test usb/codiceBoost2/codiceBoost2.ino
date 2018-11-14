@@ -27,19 +27,13 @@ void loop() {
     readString[dim-1]=0; //deleting \n on recived string
     if (readString.length()>0) {
        if(readString=="ciao"){
-          Serial.println("ciao anche a te"); //see what was received
+           Serial.println("ciao anche a te"); //see what was received
         }
        else {Serial.print("il comando :-"); Serial.print(readString); Serial.print("- non è riconosciuto\n");}
        digitalWrite(12,HIGH);
        delay(1000);
        digitalWrite(12,LOW);
   }
-  odometry="posizione: ";
-  odometry=odometry + String(x);
-  x++;
-  Serial.println(odometry);
   dim=0;
-  delay(1000);
-  Serial.flush();
   readString="";
 }

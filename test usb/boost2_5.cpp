@@ -66,7 +66,7 @@ void input_func(){
 		my_write();}
 }
 
-int main(int argc, char* argv[])
+int startThreads()
 {
   for(int k=0;k<BUFFSIZE;k++){
 	read_msg_[k]=0;
@@ -77,4 +77,7 @@ int main(int argc, char* argv[])
   while(1){}
 } 
 
+int main(){
+startThreads();
+}
 

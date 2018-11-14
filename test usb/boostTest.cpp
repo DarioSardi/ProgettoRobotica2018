@@ -1,6 +1,6 @@
 #include <iostream>	
-#include "SimpleSerial.h"
-
+#include "boost3.h"
+#include <unistd.h>
 using namespace std;
 using namespace boost;
 string input;
@@ -8,23 +8,12 @@ string input;
 
 int main(int argc, char* argv[])
 {
-    try {
-
-    SimpleSerial serial("/dev/ttyACM3",9600);
-	while(1){
-	sleep(10);
-	}	
-
-
-	/*cout<<"begin read phase"<<endl;
+    ArduinoIO a("/dev/ttyACM3");
+	sleep(3);	
 	while(1){	
-	cin >> input;	
-	serial.writeString(input);	
-	cout<<serial.readLine();
+	a.write("ciao");
+	a.read();
+	sleep(1);	
 	}
-    } catch(boost::system::system_error& e)
-    {
-        cout<<"Error: "<<e.what()<<endl;
-        return 1;
-    }*/
+	
 }
