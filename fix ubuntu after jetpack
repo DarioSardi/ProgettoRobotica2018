@@ -1,0 +1,2 @@
+sudo apt-get purge ".*:arm64"
+sudo  dpkg --remove-architecture arm64 

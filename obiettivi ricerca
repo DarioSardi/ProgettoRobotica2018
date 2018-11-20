@@ -22,3 +22,11 @@ Star/temp openfab.->publish sul topic da parte della ros.-> openfab map
 from-> topic del sw to-> topic del driver. (vedi place recognition_launch-> arg image è il topic da modificare)
 
 spostare ros-openfabmap2 e msg in ROS/src
+
+
+
+------------------nuovi obiettivi per progetto---------------
+nodo zed wraper pubblica sensor_msg/imgInfo 
+
+		/zed/left/camera_info
+		/zed/left/image_raw_color 

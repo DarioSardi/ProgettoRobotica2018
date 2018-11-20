@@ -4,6 +4,7 @@
 
 #include <iostream>	
 #include "SerialIO.h"
+#include "deviceFinder.h"
 #include <unistd.h>
 #include <thread>
 #include <string>
@@ -14,13 +15,11 @@ string input;
 
 int main(int argc, char* argv[])
 {
-
-
-
 	
-	std::cout<<"creo interfaccia....";	    
-	SerialIO a("/dev/ttyACM3");
-	std::cout<<"ok!\n";	
+	//std::cout<<"creo interfaccia....";	 
+	printf("connecting to arduino at %s\n",getArduino());   
+	SerialIO a(getArduino());
+	//std::cout<<"ok!\n";	
 	sleep(2); //arduino è lento a svegliarsi...	
 	while(1){								
 					std::cout<<"IO:ciao Arduino!\nArduino:";	
