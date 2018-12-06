@@ -1,9 +1,0 @@
-https://elinux.org/Jetson_TX2#Software_Support
-
-	supporta solo ubuntu 16.04
-	L4T sta per linux for tegra....
-
-per cuda
-wget http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/006/linux-x64/nv-gie-repo-ubuntu1604-6-rc-cuda8.0_1.0.2-1_arm64.deb
-forum da cui ho trovato
-https://devtalk.nvidia.com/default/topic/1001520/setting-up-cuda-manually-on-tx2/
