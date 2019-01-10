@@ -310,7 +310,7 @@ roslaunch zed_wrapper zed.launch
 \end{verbatim}
 
 \paragraph{webcam interna jetson-TX2}
-La jetson-TX2 è fornita di una telecamera interna che avrà come indice \textit{/dev/video0} mentre la telecamera ZED, se non ci sono collegate altre camere, sarà \textit{/dev/video1}. Il pacchetto \textit{zed-ros-wrapper} avrà un launch file che chiamerà la camera di defaut come indice 0. Modificare il \textit{zed.launch} dentro il percorso  \path{ROS/src/zed-ros-wrapper/zed_wrapper/launch} inserendo nel argomento relativa alla camera il valore 1.
+La jetson-TX2 è fornita di una telecamera interna che avrà come file nella dev-path  \textit{/dev/video0} mentre la telecamera ZED, se non ci sono collegate altre camere, sarà \textit{/dev/video1}.Nel pacchetto \textit{zed-ros-wrapper} il launch file utilizzerà di default la camera che ha come indice 0. Occorre dunque modificare il \textit{zed.launch} nel percorso  \path{ROS/src/zed-ros-wrapper/zed_wrapper/launch} inserendo nel argomento relativa alla camera il valore 1.
 \begin{verbatim}
  <arg name="camera_model"         default="1"/>
 \end{verbatim}
