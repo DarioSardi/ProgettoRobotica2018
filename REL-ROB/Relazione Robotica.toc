@@ -1,19 +1,27 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}ROS per NVIDIA Jetson TX2}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Setup tramite tool Jetpack}{2}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Backup e ripristino}{2}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {1.2.1}Backup}{2}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Ripristino}{2}{subsubsection.1.2.2}
-\contentsline {subsection}{\numberline {1.3}Possibile errore}{3}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Setup di Ubuntu}{3}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}Setup tastiera}{3}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Installazione ros}{3}{subsubsection.1.4.2}
-\contentsline {section}{\numberline {2}ROS: COMUNICAZIONE SERIALE TRAMITE USB}{4}{section.2}
-\contentsline {section}{\numberline {3}ZED}{8}{section.3}
-\contentsline {paragraph}{Profodit\IeC {\`a}}{8}{section*.4}
-\contentsline {paragraph}{Mappa di profondit\IeC {\`a}}{8}{section*.5}
-\contentsline {paragraph}{Mappatura 3D}{8}{section*.6}
-\contentsline {subsection}{\numberline {3.1}ZED SDK}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}ZED-ROS WRAPPER}{8}{subsection.3.2}
-\contentsline {paragraph}{webcam interna jetson-TX2}{9}{section*.7}
+\contentsline {section}{\numberline {1}ROS per NVIDIA Jetson TX2}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Setup tramite tool Jetpack}{2}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Backup e ripristino}{2}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Backup}{2}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Ripristino}{2}{subsubsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.3}Possibile errore}{3}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Setup di Ubuntu}{3}{subsection.1.4}% 
+\contentsline {subsubsection}{\numberline {1.4.1}Setup tastiera}{3}{subsubsection.1.4.1}% 
+\contentsline {subsubsection}{\numberline {1.4.2}Installazione ros}{3}{subsubsection.1.4.2}% 
+\contentsline {section}{\numberline {2}ROS: COMUNICAZIONE SERIALE TRAMITE USB}{4}{section.2}% 
+\contentsline {section}{\numberline {3}ZED}{8}{section.3}% 
+\contentsline {paragraph}{Profodit\IeC {\`a}}{8}{section*.4}% 
+\contentsline {paragraph}{Mappa di profondit\IeC {\`a}}{8}{section*.5}% 
+\contentsline {paragraph}{Mappatura 3D}{8}{section*.6}% 
+\contentsline {subsection}{\numberline {3.1}ZED SDK}{8}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}ZED-ROS WRAPPER}{8}{subsection.3.2}% 
+\contentsline {paragraph}{webcam interna jetson-TX2}{9}{section*.7}% 
+\contentsline {subsection}{\numberline {3.3}STAR-MARKER-FINDER}{9}{subsection.3.3}% 
+\contentsline {paragraph}{Reindirizzamento topic}{10}{section*.9}% 
+\contentsline {section}{\numberline {4}eProsima DDS}{11}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}ROS 2}{11}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}eProsima}{11}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}installazione}{12}{subsection.4.3}% 
+\contentsline {paragraph}{eProsima RPC su DDS}{12}{section*.12}% 
+\contentsline {paragraph}{eProsima Fast RTPS}{13}{section*.13}% 
