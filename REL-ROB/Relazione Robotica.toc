@@ -15,7 +15,7 @@
 \contentsline {paragraph}{Mappa di profondit\IeC {\`a}}{8}{section*.5}% 
 \contentsline {paragraph}{Mappatura 3D}{8}{section*.6}% 
 \contentsline {subsection}{\numberline {3.1}ZED SDK}{8}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}ZED-ROS WRAPPER}{8}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.2}ZED-ROS WRAPPER}{9}{subsection.3.2}% 
 \contentsline {paragraph}{webcam interna jetson-TX2}{9}{section*.7}% 
 \contentsline {subsection}{\numberline {3.3}STAR-MARKER-FINDER}{9}{subsection.3.3}% 
 \contentsline {paragraph}{Reindirizzamento topic}{10}{section*.9}% 

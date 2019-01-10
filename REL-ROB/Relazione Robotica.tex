@@ -281,12 +281,11 @@ Oppure lo ZED Depth Viewer utilizza l'SDK per acquisire e visualizzare la mappa 
 \begin{verbatim}
 /usr/local/zed/tools/ZED Depth Viewer
 \end{verbatim}
-
+\newpage
 \subsection{ZED-ROS WRAPPER}
 
-il pacchetto \textit{zed-ros-wrapper} consente di utilizzare le telecamere stereo ZED con ROS. Fornisce le immagini della fotocamera sinistra e destra, la mappa della profondità, la nuvola di punti, le informazioni sulla posa e supporta l'uso di più telecamere ZED.
-
-
+il pacchetto \textit{zed-ros-wrapper} consente di utilizzare le telecamere stereo ZED con ROS. 
+Fornisce un nodo ros che pubblica in tempo reale su piu topic immagini relative alla fotocamera destra e sinistra, nuvole di profondità relative, i dati relativi alle sue specifiche video, informazioni relative alla sua posizione e alto ancora.
 Per  poterlo utilizzare devono essere soddisfati alcuni prerequisiti
 
 \begin{itemize}
@@ -295,7 +294,7 @@ Per  poterlo utilizzare devono essere soddisfati alcuni prerequisiti
 \item ROS Kinetic
 \end{itemize}
 
-Per installare zed-ros-wrapper , aprire un terminale bash, clonare il pacchetto da Github e crearlo:
+Per installare zed-ros-wrapper, clonare il pacchetto da Github e installarlo:
 \begin{verbatim}
 cd ~/catkin_ws/src/ #use your current catkin folder
 git clone https://github.com/stereolabs/zed-ros-wrapper.git
@@ -305,8 +304,7 @@ echo source $(pwd)/devel/setup.bash >> ~/.bashrc
 source ~/.bashrc
 \end{verbatim}
 
-Aprire un terminale e utilizzare \textit{roslaunch} per avviare il nodo ZED:
-
+Per avviare il nodo zed, utilizzare \textit{roslaunch}:
 \begin{verbatim}
 roslaunch zed_wrapper zed.launch
 \end{verbatim}

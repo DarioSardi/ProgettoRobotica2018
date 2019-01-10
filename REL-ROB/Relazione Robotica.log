@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.10)  10 JAN 2019 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.10)  10 JAN 2019 15:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -761,36 +761,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--244
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 293.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 292.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 293.
- [8]
-<marker_img.PNG, id=332, 366.77025pt x 278.84175pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 292.
+<marker_img.PNG, id=330, 366.77025pt x 278.84175pt>
 File: marker_img.PNG Graphic file (type png)
 <use marker_img.PNG>
-Package pdftex.def Info: marker_img.PNG  used on input line 341.
+Package pdftex.def Info: marker_img.PNG  used on input line 339.
 (pdftex.def)             Requested size: 183.38467pt x 139.42052pt.
  [9 <./marker_img.PNG>] [10]
 <dds_img.PNG, id=345, 520.344pt x 264.38776pt>
 File: dds_img.PNG Graphic file (type png)
 <use dds_img.PNG>
-Package pdftex.def Info: dds_img.PNG  used on input line 373.
+Package pdftex.def Info: dds_img.PNG  used on input line 371.
 (pdftex.def)             Requested size: 260.17136pt x 132.19354pt.
 <dds_img1.PNG, id=346, 519.74174pt x 205.36725pt>
 File: dds_img1.PNG Graphic file (type png)
 <use dds_img1.PNG>
-Package pdftex.def Info: dds_img1.PNG  used on input line 389.
+Package pdftex.def Info: dds_img1.PNG  used on input line 387.
 (pdftex.def)             Requested size: 259.87024pt x 102.68336pt.
  [11 <./dds_img.PNG> <./dds_img1.PNG>] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 490.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 490.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
  (./Relazione Robotica.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 490.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 490.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
 Package rerunfilecheck Info: File `"Relazione Robotica".out' has not changed.
 (rerunfilecheck)             Checksum: F04D3494F1D505D4E168D50644B078B6;1142.
  ) 
@@ -803,7 +803,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  40i,11n,63p,921b,1212s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "Relazione Robotica.pdf" (14 pages, 1145330 bytes).
+Output written on "Relazione Robotica.pdf" (14 pages, 1145379 bytes).
 PDF statistics:
  453 PDF objects out of 1000 (max. 8388607)
  405 compressed objects within 5 object streams
