@@ -285,8 +285,8 @@ Oppure lo ZED Depth Viewer utilizza l'SDK per acquisire e visualizzare la mappa 
 \subsection{ZED-ROS WRAPPER}
 
 il pacchetto \textit{zed-ros-wrapper} consente di utilizzare le telecamere stereo ZED con ROS. 
-Fornisce un nodo ros che pubblica in tempo reale su piu topic immagini relative alla fotocamera destra e sinistra, nuvole di profondità relative, i dati relativi alle sue specifiche video, informazioni relative alla sua posizione e alto ancora.
-Per  poterlo utilizzare devono essere soddisfati alcuni prerequisiti
+Fornisce un nodo ros che pubblica in tempo reale su più topic immagini relative alla fotocamera destra e sinistra, nuvole di profondità relative, i dati relativi alle sue specifiche video, informazioni relative alla sua posizione e alto ancora.
+Per poterlo utilizzare devono essere soddisfati alcuni prerequisiti:
 
 \begin{itemize}
 \item Ubuntu 16.04
@@ -310,7 +310,7 @@ roslaunch zed_wrapper zed.launch
 \end{verbatim}
 
 \paragraph{webcam interna jetson-TX2}
-La jetson-TX2 è fornita di una telecamera interna che avrà come file nella dev-path  \textit{/dev/video0} mentre la telecamera ZED, se non ci sono collegate altre camere, sarà \textit{/dev/video1}.Nel pacchetto \textit{zed-ros-wrapper} il launch file utilizzerà di default la camera che ha come indice 0. Occorre dunque modificare il \textit{zed.launch} nel percorso  \path{ROS/src/zed-ros-wrapper/zed_wrapper/launch} inserendo nel argomento relativa alla camera il valore 1.
+La jetson-TX2 è fornita di una telecamera interna che avrà come file nella dev-path  \textit{/dev/video0} mentre la telecamera ZED, se non ci sono collegate altre camere, sarà \textit{/dev/video1}.Nel pacchetto \textit{zed-ros-wrapper} il launch file utilizzerà di default la camera che ha come indice 0. Occorre dunque modificare il \textit{zed.launch} nel percorso  \path{ROS/src/zed-ros-wrapper/zed_wrapper/launch} inserendo come argomento relativo alla camera il valore 1.
 \begin{verbatim}
  <arg name="camera_model"         default="1"/>
 \end{verbatim}
