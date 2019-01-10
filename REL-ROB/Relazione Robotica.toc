@@ -19,6 +19,7 @@
 \contentsline {paragraph}{webcam interna jetson-TX2}{9}{section*.7}% 
 \contentsline {subsection}{\numberline {3.3}STAR-MARKER-FINDER}{9}{subsection.3.3}% 
 \contentsline {paragraph}{Reindirizzamento topic}{10}{section*.9}% 
+\contentsline {subsection}{\numberline {3.4}Marker-finder su architettura distribuita}{10}{subsection.3.4}% 
 \contentsline {section}{\numberline {4}eProsima DDS}{11}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}ROS 2}{11}{subsection.4.1}% 
 \contentsline {subsection}{\numberline {4.2}eProsima}{11}{subsection.4.2}% 

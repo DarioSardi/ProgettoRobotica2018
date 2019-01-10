@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.10)  10 JAN 2019 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.10)  10 JAN 2019 17:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -708,7 +708,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 45.
-<"Relazione Robotica"-frn.pdf, id=76, 597.50829pt x 845.0471pt>
+<"Relazione Robotica"-frn.pdf, id=80, 597.50829pt x 845.0471pt>
 File: "Relazione Robotica"-frn.pdf Graphic file (type pdf)
 <use "Relazione Robotica"-frn.pdf>
 Package pdftex.def Info: "Relazione Robotica"-frn.pdf  used on input line 47.
@@ -724,7 +724,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.63 \newpage
               [1]
-<NVIDIA_Jetson_TX2_Module_Devkit.png, id=132, 313.17pt x 297.36093pt>
+<NVIDIA_Jetson_TX2_Module_Devkit.png, id=137, 313.17pt x 297.36093pt>
 File: NVIDIA_Jetson_TX2_Module_Devkit.png Graphic file (type png)
 <use NVIDIA_Jetson_TX2_Module_Devkit.png>
 Package pdftex.def Info: NVIDIA_Jetson_TX2_Module_Devkit.png  used on input line 82.
@@ -740,7 +740,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--116
  []
 
 [2 <./NVIDIA_Jetson_TX2_Module_Devkit.png>]
-<err1.png, id=147, 1371.1225pt x 770.88pt>
+<err1.png, id=152, 1371.1225pt x 770.88pt>
 File: err1.png Graphic file (type png)
 <use err1.png>
 Package pdftex.def Info: err1.png  used on input line 121.
@@ -768,45 +768,45 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 292.
-<marker_img.PNG, id=330, 366.77025pt x 278.84175pt>
+<marker_img.PNG, id=335, 366.77025pt x 278.84175pt>
 File: marker_img.PNG Graphic file (type png)
 <use marker_img.PNG>
 Package pdftex.def Info: marker_img.PNG  used on input line 339.
 (pdftex.def)             Requested size: 183.38467pt x 139.42052pt.
  [9 <./marker_img.PNG>] [10]
-<dds_img.PNG, id=345, 520.344pt x 264.38776pt>
+<dds_img.PNG, id=350, 520.344pt x 264.38776pt>
 File: dds_img.PNG Graphic file (type png)
 <use dds_img.PNG>
-Package pdftex.def Info: dds_img.PNG  used on input line 371.
+Package pdftex.def Info: dds_img.PNG  used on input line 401.
 (pdftex.def)             Requested size: 260.17136pt x 132.19354pt.
-<dds_img1.PNG, id=346, 519.74174pt x 205.36725pt>
+<dds_img1.PNG, id=351, 519.74174pt x 205.36725pt>
 File: dds_img1.PNG Graphic file (type png)
 <use dds_img1.PNG>
-Package pdftex.def Info: dds_img1.PNG  used on input line 387.
+Package pdftex.def Info: dds_img1.PNG  used on input line 417.
 (pdftex.def)             Requested size: 259.87024pt x 102.68336pt.
  [11 <./dds_img.PNG> <./dds_img1.PNG>] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 518.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 518.
  (./Relazione Robotica.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 518.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 518.
 Package rerunfilecheck Info: File `"Relazione Robotica".out' has not changed.
-(rerunfilecheck)             Checksum: F04D3494F1D505D4E168D50644B078B6;1142.
+(rerunfilecheck)             Checksum: 76E5ACE828045BDB741BDC03B567EDC5;1233.
  ) 
 Here is how much of TeX's memory you used:
- 22572 strings out of 492616
- 407817 string characters out of 6128967
+ 22574 strings out of 492616
+ 407847 string characters out of 6128967
  688430 words of memory out of 5000000
- 26081 multiletter control sequences out of 15000+600000
+ 26082 multiletter control sequences out of 15000+600000
  542443 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,11n,63p,921b,1212s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "Relazione Robotica.pdf" (14 pages, 1145399 bytes).
+Output written on "Relazione Robotica.pdf" (14 pages, 1147470 bytes).
 PDF statistics:
- 453 PDF objects out of 1000 (max. 8388607)
- 405 compressed objects within 5 object streams
- 193 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 458 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

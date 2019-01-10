@@ -357,6 +357,36 @@ E cambiare le voci di \textit{remap}, è sufficiente scegliere una delle due cam
     <remap from="camera_info" to="/left/camera_info"/>
 \end{verbatim}
 
+\subsection{Marker-finder su architettura distribuita}
+Il programma è stato realizzato con l'obiettivo di rendere autonoma la guida di un robot esistente. 
+Quest'ultimo è dotato di un computer di bordo responsabile del movimento delle quattro ruote omnidirezionali connesse attraverso un cavo RJ45.
+Si è voluto implementare la comunicazione tra questo pc e la scheda Jetson in modo da separare la parte di gestione della locomozione da quella di odometria e elaborazione dati.
+La connessione tra i due calcolatori è stata effettuata attraverso un ulteriore cavo rj45 in configurazione crossover, creando una rete LAN.
+È risultato necessario assegnare un ip statico alle due interfacce di rete, configurabile tramite il network-manager di ubuntu o con un semplice comando da terminale:
+\begin{verbatim}
+ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up
+\end{verbatim}
+In questo caso si presuppone che la porta ethernet sia riconosciuta dal sistema come "eth0" mentre l'indirizzo ip è un indirizzo ip scelto casualmente.Per l'indirizzo ip del secondo pc si tenga conto della convenzione adottata nel primo ovvero, in questo caso, 24 bit di subnet e 8 di indirizzamento (l'ip della seconda scheda dovrà essere del tipo 192.168.0.x ).
+Una volta stabilita la connessione, confermata generalmente da una notifica desktop di sistema, bisogna effettuare il setup dei terminali utilizzati per ROS.
+In un sistema distribuito roscore viene eseguito su di una sola macchina, alle altre macchine connesse viene fornito l'ip della macchina che sta eseguendo roscore in modo da poter connettere i propri nodi ad esso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \section{eProsima DDS}
 
