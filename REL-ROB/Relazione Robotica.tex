@@ -374,30 +374,43 @@ E cambiare le voci di \textit{remap}, è sufficiente scegliere una delle due cam
 Il programma è stato realizzato con l'obiettivo di rendere autonoma la guida di un robot esistente. 
 Quest'ultimo è dotato di un computer di bordo responsabile del movimento delle quattro ruote omnidirezionali connesse attraverso un cavo RJ45.
 Si è voluto implementare la comunicazione tra questo pc e la scheda Jetson in modo da separare la parte di gestione della locomozione da quella di odometria e elaborazione dati.
-La connessione tra i due calcolatori è stata effettuata attraverso un ulteriore cavo rj45 in configurazione crossover, creando una rete LAN.
-È risultato necessario assegnare un ip statico alle due interfacce di rete, configurabile tramite il network-manager di ubuntu o con un semplice comando da terminale:
+La connessione tra i due calcolatori viene effettuata attraverso un ulteriore cavo rj45 in configurazione crossover, creando una rete LAN.
+È  necessario assegnare un ip statico alle due interfacce di rete, configurabile tramite il network-manager di ubuntu o con un semplice comando da terminale:
 \begin{verbatim}
 ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up
 \end{verbatim}
-In questo caso si presuppone che la porta ethernet sia riconosciuta dal sistema come "eth0" mentre l'indirizzo ip è un indirizzo ip scelto casualmente.Per l'indirizzo ip del secondo pc si tenga conto della convenzione adottata nel primo ovvero, in questo caso, 24 bit di subnet e 8 di indirizzamento (l'ip della seconda scheda dovrà essere del tipo 192.168.0.x ).
-Una volta stabilita la connessione, confermata generalmente da una notifica desktop di sistema, bisogna effettuare il setup dei terminali utilizzati per ROS.
-In un sistema distribuito roscore viene eseguito su di una sola macchina, alle altre macchine connesse viene fornito l'ip della macchina che sta eseguendo roscore in modo da poter connettere i propri nodi ad esso.
-//TODO
 
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \centering
+    \includegraphics [width=0.3\textwidth] {lanRos.png}
+    \caption{ipotetica configurazione}
+    \label{fig:lan}
+\end{wrapfigure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+In questo caso si presuppone che la porta ethernet sia riconosciuta dal sistema come "eth0" mentre l'indirizzo ip è un indirizzo ip scelto casualmente.Per la scelta dell'indirizzo ip del secondo pc si tenga conto della convenzione adottata nel primo.In questo caso, 24 bit di subnet e 8 di indirizzamento,l'ip della seconda scheda dovrà quindi essere del \textit{tipo 192.168.0.x} .
+Una volta stabilita la connessione, confermata generalmente da una notifica desktop di sistema, bisogna effettuare il setup dei terminali utilizzati per ROS.\\
+In un sistema distribuito ROSCORE viene eseguito su una sola macchina, alle altre macchine connesse deve essere fornito l'ip della macchina che sta eseguendo roscore in modo da poter connettere i propri nodi ad esso.\\
+facendo riferimento alla Figura \ref{fig:lan} e supponendo di voler avviare ROSCORE sulla scheda Jetson, sulla stessa dovremmo esportare indirizzo ip e relativa porta su cui verrà avviato ROSCORE e un eventuale nome della macchina:
+\begin{verbatim}
+echo export ROS_MASTER_URI=http://localhost:11311 
+echo export ROS_HOSTNAME=JETSONTX2
+roscore
+\end{verbatim}
+È stato cosi avviato ROSCORE ad un indirizzo specifico a cui qualsiasi pc nella rete locale potrà connettersi per coordinare la gestione dei topic.\\
+\textit{
+N.B. i comandi per la gestione degli indirizzi e del nome dell'host devono essere ripetuti ogni qualvolta un nuovo terminale viene aperto. Per convenienza questi possono essere aggiunti in fondo al file '.bashrc' ,collocato solitamente nella home, per essere eseguiti all'avvio di ciascuna BASH. Se si utilizza ZSH o FISH aggiungerli ai relativi file di configurazione. 
+}
+Per ogni altro pc che si vuole connettere alla scheda Jetson andrà specificato il suo indirizzo ip allo stesso modo:
+\begin{verbatim}
+echo export ROS_MASTER_URI=http://JETSONTX2:11311
+\end{verbatim}
+Alternativamente si puo utilizzare l'indirizzo ip della scheda nel caso ci fossero problemi con il riconoscimento dell'hostname:
+\begin{verbatim}
+echo export ROS_MASTER_URI=http://192.168.0.3:11311
+\end{verbatim}
+Si possono ora utilizzare tutte le funzionalità di ROS e avviare programmi come se tutti i nodi avviati dalle diverse macchine fossero presenti su ciascuna di esse.
+Nel caso del marker finder abbiamo avviato roscore sulla Jetson con connessa la telecamera ZED e fatto il setup sul secondo PC.
+Abbiamo quindi avviato il nodo marker finder sulla Jetson e visualizzato i risultati sul secondo pc attraverso RVIZ simulando in questo modo uno scambio dati attraverso due topic tra i due pc.
 
 \newpage
 \section{eProsima DDS}
