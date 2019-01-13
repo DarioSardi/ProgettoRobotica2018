@@ -235,7 +235,7 @@ int main(int argc, char* argv[]){
 
 
 \section{ZED}
-Lo ZED è una fotocamera che riproduce il modo in cui funziona la visione umana. Usando due sensori RGB da $4MP$ e attraverso la triangolazione, la ZED fornisce una comprensione tridimensionale della scena che osserva, permettendo al robot di diventare consapevole dello spazio e del movimento.
+La ZED è una fotocamera che riproduce il modo in cui funziona la visione umana. Usando due sensori RGB da $4MP$ e attraverso la triangolazione, la ZED fornisce una comprensione tridimensionale della scena che osserva, permettendo al robot di diventare consapevole dello spazio e del movimento.
 
 Cattura video 3D ad alta definizione , fino a $2K $ , con un ampio campo visivo ($\ang{110}$) e apertura $f/2.0$. La camera genera due flussi video destro e sinistro sincronizzati in formato side-by-side su USB 3.0. \'E disponibile la retrocompatibilità con USB 2.0.
 \\
@@ -253,14 +253,14 @@ WVGA&	1344x376&	100, 60, 30, 15&	Extra largo\\
 \bottomrule
 \end{tabular}
 \end{center}
-Lo ZED emette le immagini in diversi formati. 
+La ZED trasmette le immagini in diversi formati. 
 \'E possibile selezionare tra immagini rettificate, non rettificate e in scala di grigi.
 \paragraph{Profodità}
-Lo ZED riproduce il funzionamento della visione binoculare umana. Gli occhi umani sono separati orizzontalmente di circa 65 mm in media. Quindi, ogni occhio ha una visione leggermente diversa del mondo circostante. Confrontando queste due viste, il nostro cervello può inferire non solo la profondità ma anche il movimento 3D nello spazio. Allo stesso modo, lo ZED ha due occhi separati da 12 cm che catturano un video 3D ad alta risoluzione della scena e stimano profondità e movimento confrontando lo spostamento dei pixel tra le immagini sinistra e destra.
+La ZED riproduce il funzionamento della visione binoculare umana. Gli occhi umani sono separati orizzontalmente di circa 65 mm in media. Quindi, ogni occhio ha una visione leggermente diversa del mondo circostante. Confrontando queste due viste, il nostro cervello può inferire non solo la profondità ma anche il movimento 3D nello spazio. Allo stesso modo, la ZED ha due occhi separati da 12 cm che catturano un video 3D ad alta risoluzione della scena e stimano profondità e movimento confrontando lo spostamento dei pixel tra le immagini sinistra e destra.
 \paragraph{Mappa di profondità}
-Lo ZED memorizza un valore di distanza (Z) per ciascun pixel (X, Y) nell'immagine. La distanza è espressa in  metri e calcolata dal retro dell'occhio sinistro della telecamera all'oggetto della scena.
+La ZED memorizza un valore di distanza (Z) per ciascun pixel (X, Y) nell'immagine. La distanza è espressa in  metri e calcolata dal retro dell'occhio sinistro della telecamera all'oggetto della scena.
 
-Le mappe di profondità catturate dallo ZED non possono essere visualizzate direttamente poiché sono codificate su 32 bit. Per visualizzare la mappa di profondità, è necessaria una rappresentazione monocromatica (in scala di grigi) a 8 bit con valori compresi tra [0, 255], dove 255 rappresenta il valore di profondità più vicino possibile e 0 il valore di profondità più distante possibile.
+Le mappe di profondità catturate dalla ZED non possono essere visualizzate direttamente poiché sono codificate su 32 bit. Per visualizzare la mappa di profondità, è necessaria una rappresentazione monocromatica (in scala di grigi) a 8 bit con valori compresi tra [0, 255], dove 255 rappresenta il valore di profondità più vicino possibile e 0 il valore di profondità più distante possibile.
 \paragraph{Mappatura 3D}
 La ZED scansiona continuamente i suoi dintorni e crea una mappa 3D di ciò che vede. Questa mappa viene aggiornata quando il dispositivo viene spostato acquisendo nuovi elementi nella scena. Poiché la fotocamera percepisce le distanze oltre la gamma dei tradizionali sensori RGB-D, è in grado di ricostruire rapidamente mappe 3D di grandi aree interne ed esterne.
 
@@ -269,15 +269,15 @@ Prima di tutto bisogna scaricare e installare la SDK relativa. Essa contiene tut
 La Jetson-TX2 utizza un versione diversa di linux, chiamata L4T(linux for tegra). Dal sito bisogna cercare nella pagina del download 
  \href{https://www.stereolabs.com/developers/release/#sdkdownloads_anchor}{ZED SDK} per la versione per TX2. 
 Si noti che l'SDK ZED è collegato con la versione CUDA utilizzata da JetPack.
-\'E possibile verificare il corretto funzionamento della ZED utlizzando i tool presenti nell'SDK.
+\'E possibile verificare il corretto funzionamento della ZED utlizzando i tool presenti nell'SDK posizionati di default nella cartella:
 \begin{verbatim}
 /usr/local/zed/tools
 \end{verbatim}
-Si possono avviare lo ZED Explorer che permette un'anteprima e la registrazione. Consente di modificare la risoluzione video, le proporzioni, i parametri della fotocamera e acquisire istantanee ad alta risoluzione e video 3D.
+Si può avviare il ZED Explorer che permette un'anteprima e la registrazione. Consente di modificare la risoluzione video, le proporzioni, i parametri della fotocamera e acquisire istantanee ad alta risoluzione e video 3D.
 \begin{verbatim}
 /usr/local/zed/tools/ZED Explorer
 \end{verbatim}
-Oppure lo ZED Depth Viewer utilizza l'SDK per acquisire e visualizzare la mappa di profondità e la nuvola di punti 3D.
+Oppure il ZED Depth Viewer utilizza l'SDK per acquisire e visualizzare la mappa di profondità e la nuvola di punti 3D.
 \begin{verbatim}
 /usr/local/zed/tools/ZED Depth Viewer
 \end{verbatim}
@@ -323,12 +323,25 @@ Per vedere se correttamente la ZED comunica con ROS si utilizza RVIZ. Si apre il
 \begin{verbatim}
  rosrun rviz rviz
 \end{verbatim}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.5]{rviz.PNG}
+\caption{schermata di rviz}
+\end{figure}
+
+Mettere la modalità del display in formato TF. TF  consente all'utente di tenere traccia di più fotogrammi di coordinate nel tempo. Questo permette di vedere sulla schermata di rviz, in real-time, la posizione del marcatore,della telecamera e del robot.
 Per vedere, per esempio, l'immagine rettificata dalla telecamera ZED, si inserisce il seguente comando in un nuovo terminale:
 
 \begin{verbatim}
-rosrun image_view image_view image: = / camera / rgb / image_rect_color
+rosrun image_view image_view image: = /camera/rgb/ image_rect_color
 \end{verbatim}
-In basso a sinistra del menu RVIZ, si clicca sul pulsante \textbf{Add}. Viene mostrato l'elenco di tutti i topic disponibili. Di deafult quelli della ZED si trovano \textit{/camera}
+Avviare in nuovo terminale i nodi relativi ai marker aruco.
+\begin{verbatim}
+rosrun star_marker_finder star_marker_finder
+\end{verbatim}
+In basso a sinistra del menu RVIZ, si clicca sul pulsante \textbf{Add}. Viene mostrato l'elenco di tutti i topic disponibili. Di deafult quelli della ZED si trovano sotto la dicitura \textit{/camera}.
+
  
 
 
@@ -340,9 +353,7 @@ Per una documentazione più approfondita sulla ZED e i nodi utilizzati è consig
 
 \subsection{STAR-MARKER-FINDER}
 La stima della posizione è di grande importanza in molte applicazioni di visione artificiale: la navigazione robotica, la realtà aumentata e molte altre. Questo processo si basa sulla ricerca di corrispondenze tra i punti nell'ambiente reale e la loro proiezione di immagini 2D. Questo è solitamente un passaggio difficile, e quindi è comune l'uso di marcatori artificiali facilitare il compito.
-
 Uno degli approcci più popolari è l'uso di marker binari quadratici. Il vantaggio principale di questi marcatori è che un singolo marker fornisce abbastanza corrispondenze (i suoi quattro angoli) per ottenere la posizione della telecamera. Inoltre, la codifica binaria interna li rende particolarmente robusti, permettendo l'applicazione di tecniche di rilevamento e correzione degli errori.
-
 Un marker \textit{ArUco} è un marker quadrato sintetico composto da un ampio bordo nero e una matrice binaria interna che determina il suo identificatore (id). Il bordo nero facilita il rapido rilevamento nell'immagine e la codifica binaria ne consente l'identificazione e l'applicazione delle tecniche di rilevamento e correzione degli errori. La dimensione del marker determina la dimensione della matrice interna. Ad esempio un marker di dimensione 4x4 è composta da 16 bit.
 
 \begin{figure}[htbp]
@@ -354,18 +365,18 @@ Un marker \textit{ArUco} è un marker quadrato sintetico composto da un ampio bo
 
 
 Ros contiene nelle sue librerie un dizionario di marcatori. Un dizionario è un insieme di marcatori considerati per una specifica applicazione. È formato da  una lista di codifiche binarie di ciascun marcatore
-
-Le proprietà principali di un dizionario sono la dimensione del dizionario(il numero di marcatori) e la dimensione del marcatore(le dimensione effettive del marcatore).
+Le proprietà principali di un dizionario sono la dimensione del dizionario (il numero di marcatori) e la dimensione del marcatore (le dimensioni effettive del marcatore).
 \paragraph{Reindirizzamento topic}
-Precedentemente lo \textit{Star-marker-finder} utilizzava una camera usb per localizzare i marcatori e dedurre la posizione del robot. Adesso al posto del nodo della camera usb viene utilizzato il nodo della ZED. \'E
-necessario modificare i file lunch dello star-marker-finder, si trova nel percorso
+Precedentemente lo \textit{Star-marker-finder} utilizzava una camera usb per localizzare i marcatori e dedurre la posizione del robot. 
+Ora al posto del nodo della camera usb viene utilizzato il nodo della ZED,è dunque necessario modificare il launch file del star-marker-finder, collocato nel percorso:
 \begin{verbatim}
 \ROS\src\star_marker_finder\launch
 \end{verbatim}
-E cambiare le voci di \textit{remap}, è sufficiente scegliere una delle due camera sinistra o destra.
+Per reindirizzare i topic attraverso \textit{remap}, è sufficiente scegliere uno dei topic della zed su cui pubblica immagini 
+\verb|/left/image_rect_color o /right/image_rect_color| e impostarli come destinazione:
 \begin{verbatim}
-    <remap from="image_rect" to="/left/image_rect_color"/>
-    <remap from="camera_info" to="/left/camera_info"/>
+<remap from="image_rect" to="/left/image_rect_color"/>
+<remap from="camera_info" to="/left/camera_info"/>
 \end{verbatim}
 
 %%%%%%%%%%%%%
@@ -414,7 +425,6 @@ Abbiamo quindi avviato il nodo marker finder sulla Jetson e visualizzato i risul
 
 \newpage
 \section{eProsima DDS}
-
 Il Data Distribution Service for Real Time Systems (DDS) è uno standard emanato dall'Object Management Group (OMG) che definisce un middleware per la distribuzione di dati in tempo reale secondo il paradigma publish/subscribe.
 Il Data Distribution Service è concepito come una soluzione infrastrutturale alla programmazione di applicazioni incentrate sui dati. Il suo scopo è di nascondere interamente le problematiche della gestione della comunicazione nella programmazione di applicazioni data-centric.
 
